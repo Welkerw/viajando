@@ -1,0 +1,39 @@
+<head>
+  <meta http-equiv="cleartype" content="on">
+  <meta name="MobileOptimized" content="320">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+
+
+<body>
+    <header class="container">
+
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">
+                    Viajando
+                </a>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    {{> loginButtons}}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="container">
+        {{#if currentUser }}
+            <!--{{> MasterLayout}}-->
+            {{> novaViagem}}
+            {{> lista}}
+            {{> pesquisa}}
+         {{else}}
+            Necessário estar logado para ver suas viagens!
+        {{/if}}
+    </main>
+</body>
