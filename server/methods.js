@@ -8,10 +8,14 @@ Meteor.methods({
     pesquisar : function(obj) {
 
       var list =  Viagens.aggregate([
+            {$match : {
+                 partida: obj.partida, destino :obj.destino,  data: obj.data}
+            },
             {$group: {
                 _id:{partida: "$partida", destino: "$destino", data: "$data"},  
-                count: { $sum: 1 } } }
-                ])
+                count: { $sum: 1 } } 
+            }
+        ])
         return list;
     }
 });
