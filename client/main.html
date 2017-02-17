@@ -29,9 +29,9 @@
     <main class="container">
         {{#if currentUser }}
             <!--{{> MasterLayout}}-->
-            {{> novaViagem}}
-            {{> lista}}
-            {{> pesquisa}}
+            {{> incluirViagem}}
+            {{> listarViagem}}
+            {{> pesquisarViagem}}
          {{else}}
             Necessário estar logado para ver suas viagens!
         {{/if}}

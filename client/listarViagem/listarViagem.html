@@ -1,14 +1,17 @@
-<template name="lista">
+<template name="listarViagem">
     <div class="row">
         <div class="col-xs-12">
 
             {{#each viagens}}
             <div class="row">
-                <div class="col-xs-11">
+                <div class="col-xs-10">
                    {{formataData}} - {{partida}} para {{destino}}
                 </div>
                 <div class="col-xs-1">
-                    <button class="btn btn-danger">Excluir</button>
+                    <button class="alterar btn btn-danger" name="alterar">Alterar</button>
+                </div>
+                <div class="col-xs-1">
+                    <button class="excluir btn btn-danger" name="excluir">Excluir</button>
                 </div>
                  <hr>
             </div>

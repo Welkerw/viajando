@@ -1,4 +1,4 @@
-Template.novaViagem.events({
+Template.incluirViagem.events({
     
     "submit form": function(e, template) {
         e.preventDefault();

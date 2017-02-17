@@ -1,4 +1,4 @@
-Template.pesquisa.onCreated( () => {
+Template.pesquisarViagem.onCreated( () => {
   let template = Template.instance();
 
   template.pesquisado = new ReactiveVar();
@@ -10,7 +10,7 @@ Template.pesquisa.onCreated( () => {
   });
 });
 
-Template.pesquisa.events({
+Template.pesquisarViagem.events({
     
     "click button": function(e, template) {
         e.preventDefault();
@@ -27,17 +27,14 @@ Template.pesquisa.events({
         Meteor.call("pesquisar", {partida: localPartida, destino: localDestino, data: dataViagem}, function(error, result) {
             template.pesquisado.set(result);
         });
-
-        Viagens.find({_id: { $type: 3 } });
-        Viagens.remove({_id: { $type: 3 } });
-
+        
         inputPartida.val("");
         inputDestino.val("");
         inputData.val("");
     } 
 });
 
-Template.pesquisa.helpers({
+Template.pesquisarViagem.helpers({
     pesquisado() {
         return Template.instance().pesquisado.get();
     },
