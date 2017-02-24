@@ -27,3 +27,4 @@ accounts-password
 ian:accounts-ui-bootstrap-3
 chriswessels:slideout
 meteorhacks:aggregate
+iron:router
