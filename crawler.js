@@ -25,7 +25,7 @@ var MongoClient = require('mongodb').MongoClient
 
 
   // Only run the rest of the code if we have a mongodb server with version >= 1.9.1
-var track = "partiufolia,folia,carnaval,feriado,feriadao,recesso,feriadão,carnafolia,viajar,viagem,estrada,rumo,partiu,bora,viajando";
+var track = "partiufolia,folia,carnaval,feriado,feriadao,recesso,feriadão,carnafolia,viajar,viagem,estrada,trânsito,transito,rumo,partiu,bora,viajando";
 
 var stream = client.stream('statuses/filter', {track:track ,location:'Brazil',language:'pt'});
 stream.on('data', function(event) {
