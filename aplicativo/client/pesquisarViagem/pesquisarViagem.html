@@ -1,0 +1,77 @@
+<template name="pesquisarViagem">
+    <div class="row">
+        <div class="col-xs-12">
+            <form>
+                <div class="form-group">
+                    <div class="col-xs-4">
+                        <label for="partidaPesquisa">Local Partida</label>
+                        <input type="text" id="partidaPesquisa" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-4">
+                        <label for="destinoPesquisa">Local Destino</label>
+                        <input type="text" id="destinoPesquisa" class="form-control">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <div class="col-xs-4">
+                        <label for="dataPesquisa">Data e Hora da Viagem</label>
+                        <input type="datetime-local" id="dataPesquisa" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group" style="padding-top: 6%">
+                    <button class="btn btn-success btn-block">Pesquisar Viagens!</button>
+                </div>
+            </form>
+        </div>    
+    </div>
+     <div class="row">
+        <div class="col-xs-12">
+            {{#if pesquisado}}
+                <div class="row">
+                    <div class="col-xs-2">
+                         <h3>Data</h3>
+                    </div>
+                    <div class="col-xs-3">
+                         <h3>Partida</h3>
+                    </div>
+                    <div class="col-xs-3">
+                         <h3>Destino</h3>
+                    </div>
+                     <div class="col-xs-1" ></div>
+                     <div class="col-xs-3">
+                         <h3>Numero de Pessoas</h3>
+                    </div>
+                     <hr>
+                </div>
+            {{/if}}
+        </div>
+    </div>    
+     <div class="row">
+        <div class="col-xs-12">
+            {{#if pesquisado}}
+                {{#each pesquisado}}
+                <div class="row">
+                    <div class="col-xs-2">
+                         {{formataData}} 
+                    </div>
+                    <div class="col-xs-3">
+                         {{partida}} 
+                    </div>
+                    <div class="col-xs-3">
+                         {{destino}} 
+                    </div>  
+                    <div class="col-xs-1" ></div>
+                    <div class="col-xs-2">
+                         {{count}} 
+                    </div>
+                      <hr>
+                </div>
+                {{/each}}
+            {{else}}
+                Lista de viagens está vazia!
+            {{/if}}
+        </div>
+    </div>    
+</template>
