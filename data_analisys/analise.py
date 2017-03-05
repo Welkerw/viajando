@@ -29,7 +29,6 @@ print("Stemming - removendo plural, gênero, etc")
 for i in filtrado:
 	filt_stem.append(stemmer.stem(i))
 
-print (filt_stem)
 print("Calculando frequência")
 fdist = nltk.FreqDist(filt_stem)
 
