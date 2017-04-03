@@ -9,10 +9,19 @@ body {
     background: #eee;
     color: #666666;
 }
-.navbar { margin-bottom: 10px }
+.navbar { margin-bottom: none;
+    margin-left: -30px;}
 .navbar .navbar-inner {
     border-radius: 0px 0px 3px 3px;
 }
+
+ .navbar-brand {
+    position: absolute;
+    left: 30px;
+    width: 44px;
+    padding: 15px;
+    transition: .25s;
+ }
 #spinner { height: 300px }
 .post {
     *zoom: 1;
@@ -91,4 +100,12 @@ body {
 .load-more:hover {
     text-decoration: none;
     background: rgba(0, 0, 0, 0.1);
+}
+
+.toggle-button {
+  position: absolute;
+  width: 40px;
+  padding: 14px;
+  transition: .25s;
+  text-decoration-style:  10px solid #555;
 }

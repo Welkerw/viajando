@@ -20,8 +20,9 @@ if (Meteor.isClient) {
     slideout = new Slideout({
       'panel': template.$('#masterLayout').get(0),
       'menu': template.$('#slideout-menu').get(0),
-      'padding': 256,
-      'tolerance': 70
+      'padding': 150,
+      'tolerance': 70,
+      'margin': 1
     });
     document.querySelector('.toggle-button').addEventListener('click', function() {
         slideout.toggle();

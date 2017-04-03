@@ -14,3 +14,4 @@ Router.route('/listarViagem', { name: 'listarViagem' });
 Router.route('/incluirViagem', { name: 'incluirViagem' });
 Router.route('/alterarViagem', { name: 'alterarViagem' });
 Router.route('/pesquisarViagem', { name: 'pesquisarViagem' });
+Router.route('/avaliacao', { name: 'avaliacao' });
