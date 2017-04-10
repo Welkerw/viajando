@@ -5,15 +5,20 @@
 
             {{#each viagens}}
             <div class="row">
-                <div class="col-xs-9">
+                <div class="col-xs-12">
                    {{formataData}} - {{partida}} para {{destino}}
                 </div>
+            </div>
+            <div class="row" style="padding-top: 10px">  
+                <div class="col-xs-4"></div>
                 <div class="col-xs-1">
-                    <button class="alterar btn btn-danger" name="alterar">Alterar</button>
+                    <span class="alterar glyphicon glyphicon-pencil" name="alterar" ></span>
                 </div>
+                <div class="col-xs-1"></div>
                 <div class="col-xs-1">
-                    <button class="excluir btn btn-danger" name="excluir">Excluir</button>
+                    <span class="excluir  glyphicon glyphicon-trash" name="excluir" ></span>
                 </div>
+                <div class="col-xs-4"></div>
             </div>
             <hr>
             {{/each}}
