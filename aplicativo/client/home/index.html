@@ -1,7 +1,7 @@
 <template name="home">
           {{> header}}
     {{#if currentUser }}
-        Bem vindo!
+        {{> listarViagem}}
         {{else}}
         Necessário estar logado para ver suas viagens!
     {{/if}}
