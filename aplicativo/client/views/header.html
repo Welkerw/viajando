@@ -5,12 +5,24 @@
             <div class="toggle-button">☰</div>
             <div class="navbar-header">
                 <div class="navbar-brand">
-                    Viajando
+                    <a href="{{pathFor 'home'}}">
+                        Viajando
+                    </a>
                 </div>
-                <span class="  glyphicon glyphicon-plus"
-                style="align-items: right" name="incluirViagem" ></span>
-                <span class="pesquisarViagem  glyphicon glyphicon-search"
-                style="align-items: right" name="pesquisarViagem" ></span>
+                <div class="navbar-brand navbar-right" style="padding-left: 70%">
+                     <a href="{{pathFor 'incluirViagem'}}">
+                        <span class="  glyphicon glyphicon-plus"
+                        style="align-items: right" name="incluirViagem" >
+                        </span>
+                    </a>
+                </div>
+                <div class="navbar-brand" style="padding-left: 80%">
+                    <a href="{{pathFor 'pesquisarViagem'}}">
+                        <span class="pesquisarViagem  glyphicon glyphicon-search"
+                         style="align-items: right" name="pesquisarViagem" >
+                        </span>
+                    </a>
+                </div>
             </div>
         </nav>
     </header>
