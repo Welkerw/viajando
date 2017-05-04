@@ -18,7 +18,7 @@ stream.on('data', function(event) {
   MongoClient.connect('mongodb://127.0.0.1:27017/viajando', function(err, db) {
     if(err) throw err;
      
-     db.collection('tweets').save(event,{w: 1}, function(err, records) {
+     db.collection('pascoa').save(event,{w: 1}, function(err, records) {
         if (err) console.log("erro ao salvar tweet - " + event.text);
         console.log("record added "+ records);
         //  db.collection.update({_id : records[0]._id}, {"created_at": new Date(data[5]+"-"+data[2]+"-"+data[2] + " " + data[3]) });
