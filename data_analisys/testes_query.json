@@ -1,0 +1,44 @@
+db.pascoa.find(
+	{$or:[
+			{text:/feriado/},
+			{text:/feriadao/},
+			{text:/pascoa/}
+		  ],$and:[{ $or:[{text:/viaj/},
+		  				    {text:/viag/}
+		  				   ]}]},{text:1}).pretty() ;
+
+
+
+db.pascoa.find({
+   $and :[{$or:[{text:/viag/},{text:/viaj/},{text:/bora/},{text:/partiu/}]},
+   {$or:[
+		 {text:/feriado/},
+		 {text:/feriadao/},
+		 {text:/pascoa/}
+   ]},
+   {$or:[
+		 {text:/para /},
+		 {text:/pra /},
+		 {text:/pro /}
+   ]},
+   {$or:[
+		 {text:/bh/},
+		 {text:/belzonte/},
+		 {text:/belo horizonte/},
+		 {text:/sp/},
+		 {text:/sampa/},
+		 {text:/sao paulo/},
+		 {text:/são paulo/},
+		 {text:/rj/},
+		 {text:/rio de janeiro/},
+		 {text:/rio/},
+		 {text:/cidade maravilhosa/}
+   ]},
+   {$and:[{text:{$not:/^oferta$/i}},{text:{$not:/^confira$/i}},{text:{$not:/^dica$/i}},{text:{$not:/^fiscal$/i}}]}]}
+ ,{text:1});
+
+,
+		 {text:/sp/},
+		 {text:/sampa/},
+		 {text:/sao paulo/},
+		 {text:/são paulo/}
