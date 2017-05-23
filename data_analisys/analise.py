@@ -1,5 +1,6 @@
 import pymongo
 import nltk
+import unicodedata
 import re
 import time
 import json
@@ -8,10 +9,20 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 
 
+def removerAcentosECaracteresEspeciais(palavra):
+
+    # Unicode normalize transforma um caracter em seu equivalente em latin.
+    nfkd = unicodedata.normalize('NFKD', palavra)
+    palavraSemAcento = u"".join([c for c in nfkd if not unicodedata.combining(c)])
+
+    # Usa expressão regular para retornar a palavra apenas com números, letras e espaço
+    return re.sub('[^a-zA-Z0-9 \\\]', '', palavraSemAcento)
+
+
 client = MongoClient()
 client = MongoClient('mongodb://localhost:27017/')
 db = client.viajando
-termos = db.tweets
+termos = db.pascoa
 print("Recuperando Tweets")
 print (time.strftime("%d/%m/%Y %H:%M:%S"))
 result = termos.find()
@@ -40,7 +51,7 @@ for texto in textos:
 	frase = ""
 	for w in word_tokenize(texto) :
 		if not w in stopwords.words('portuguese') and w != "RT":
-			frase += w + " "
+			frase += removerAcentosECaracteresEspeciais(w) + " "
 	filtrado += [ frase ]
 print("Fim")
 print (time.strftime("%d/%m/%Y %H:%M:%S"))
@@ -53,7 +64,7 @@ for i in fdist:
 	if i != "" and i != " ":
 		tweet = {"texto": i, "freq": fdist[i]}
 		print (tweet)
-		db.carnaval_tratado.insert_one(tweet);
+		db.pascoa_tratado.insert_one(tweet);
 	
 
 
