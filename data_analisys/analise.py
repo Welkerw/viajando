@@ -22,10 +22,10 @@ def removerAcentosECaracteresEspeciais(palavra):
 client = MongoClient()
 client = MongoClient('mongodb://localhost:27017/')
 db = client.viajando
-termos = db.pascoa
+termos = db.tweets
 print("Recuperando Tweets")
 print (time.strftime("%d/%m/%Y %H:%M:%S"))
-result = termos.find()
+result = termos.find({"geo":{"$ne":None}})
 textos = []
 filtrado = []
 emoji_pattern = re.compile("["
@@ -64,7 +64,7 @@ for i in fdist:
 	if i != "" and i != " ":
 		tweet = {"texto": i, "freq": fdist[i]}
 		print (tweet)
-		db.pascoa_tratado.insert_one(tweet);
+		db.carnaval_geo_tratado.insert_one(tweet);
 	
 
 
